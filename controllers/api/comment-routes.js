@@ -38,6 +38,10 @@ router.delete('/:id', withAuth, (req, res) => {
             return;
         }
         res.json(dbCommentData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
